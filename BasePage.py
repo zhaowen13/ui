@@ -69,7 +69,26 @@ class test(object):
         time.sleep(3)
         driver.quit()
 
-        
+    def get_url(self):
+        url=driver.current_url  
+        log.info(u'当前页面url: {0}'.find(url))     
+        return url
+
+    def get_text(self,name):
+        text=self.find(name).is_enabled()
+        log.info(u'{0}文本框的值为：'.find(text))
+
+    def back(self):   
+        driver.back()
+        log.info(u'返回上一页面')
+
+    def clear(self,name):
+        self.find(name).clear()  
+        log.info(u'清空文本框{0}'.find(name)) 
+
+    def get_name():
+        name=driver.name
+        log.info(u'浏览器名称： {0}'.find(name))
 
 if __name__ == "__main__":
     t = test("Google",'baidu','soso')
@@ -78,5 +97,6 @@ if __name__ == "__main__":
     t.click(u'百度一下')
     time.sleep(3)
     t.click(u'百度翻译')
-    t.close()
+    t.get_url()
+    t.quit()
       
