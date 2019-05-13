@@ -19,7 +19,7 @@ class AnalyzeXml(object):
                     timeOut=locator.getAttribute("timeOut")
                     name=locator.childNodes[0].data
                     l = Locator.locator(name,timeOut,value)
-                    map[locator.childNodes[0].data]=l
+                    map[name]=l
         return map         
 
 if __name__ == '__main__':

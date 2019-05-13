@@ -1,9 +1,9 @@
 #coding=utf-8
 class locator(object):
-    def __init__(self,name,timeOut,value):
+    def __init__(self,name,timeOut,UIIdentifier):
        self.name=name                #元素名称
-       self.timeOut=timeOut          #定位超时时间
-       self.value=value              #定位时间
+       self.type=type          #定位方式
+       self.UIIdentifier=UIIdentifier              #定位信息
 if __name__ == '__main__':
     b = locator('wenzhao','10000','牛逼')
     print b.name

@@ -6,13 +6,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By 
 import time
 import mylogs
-import AnalyzeJson
+import AnalyzeJson,os
+
 
 global driver
 log=mylogs.mylogs()     #文件名点类名  
 loc=''
-class test(object):
-    def __init__(self,type,name,pagename):   # 初始化 打开浏览器 并最大化  self 与java中的this中一样，调用时不用传入self参数
+class BasePage(object):
+    def __init__(self,type,name):   # 初始化 打开浏览器 并最大化  self 与java中的this中一样，调用时不用传入self参数
         self.type=type
         if type == "Google":
             global driver           
@@ -71,7 +72,7 @@ class test(object):
 
     def get_url(self):
         url=driver.current_url  
-        log.info(u'当前页面url: {0}'.find(url))     
+        log.info(u'当前页面url:'+url)    
         return url
 
     def get_text(self,name):
@@ -84,19 +85,62 @@ class test(object):
 
     def clear(self,name):
         self.find(name).clear()  
-        log.info(u'清空文本框{0}'.find(name)) 
+        log.info(u'清空文本框:{0}'.find(name)) 
 
     def get_name(self):
         name=driver.name
-        log.info(u'浏览器名称： {0}'.find(name))
+        log.info(u'浏览器名称：{0}'.find(name))
+
+    def get_driver(self):
+        return driver
+
+    def get_version(self):
+        version=driver.capabilities['version'] 
+        log.info(u'浏览器版本：'+version)
+        return version
+
+    def switch_to(self):
+        driver.switch_to.window(driver.window_handles[-1])
+        log.info(u'切换页面')
+
+
+    def refresh(self):
+        driver.refresh()
+        log.info(u'刷新页面')
+
+    def title(self):
+        title=driver.title
+        log.info(u'当前页面标题'+title)    
+        return title
+
+    def Screenshot(self):
+         isExists=os.path.exists("./images\\")
+        # 判断结果
+        if not isExists:
+        # 如果不存在则创建目录
+        # 创建目录操作函数
+            os.makedirs("./images\\")
+            print u'创建images目录'
+        timestrmap = time.strftime('%Y%m%d_%H.%M.%S')
+        imgPath = os.path.join('./images\\', '%s.png' % str(timestrmap))
+        driver.save_screenshot(imgPath)
+        log.info('screenshot:'+timestrmap+'.png')
+        print  'screenshot:', timestrmap, '.png'
+   
 
 if __name__ == "__main__":
-    t = test("Google",'baidu','soso')
+    
+    t = BasePage("Google",'locators')
     t.open("https://www.baidu.com")
     t.send_keys(u"搜索","test")
     t.click(u'百度一下')
     time.sleep(3)
-    t.click(u'百度翻译')
-    t.get_url()
-    # t.quit()
+    t.back()
+    # t.click(u'百度翻译')
+    # time.sleep(3)
+    # t.switch_to()
+    # t.refresh()
+    # t.get_url()
+    # t.get_version() 
+    t.quit()
       
