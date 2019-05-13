@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By 
 import time
 import mylogs
-import AnalyzeXml
+import AnalyzeJson
 
 global driver
 log=mylogs.mylogs()     #文件名点类名  
@@ -24,7 +24,7 @@ class test(object):
         driver.maximize_window()  
         log.info(u"最大化") 
         global loc     
-        loc=AnalyzeXml.AnalyzeXml().Analyze(name,pagename)    #初始化，读取xml 赋值给loc
+        loc=AnalyzeJson.AnalyzeJson().Analyze(name)    #初始化，读取xml 赋值给loc
 
     def open(self,url):
         try:  
@@ -36,8 +36,8 @@ class test(object):
             
     def find(self,name):                 #元素定位，并返回定位好的元素
         try:
-            el = WebDriverWait(driver,int(loc[name].timeOut),0.5).until(    #设置显示等待时间，每0.5秒检查一次，如果超出指定值就报错
-            EC.presence_of_element_located((By.XPATH, loc[name].value)))
+            el = WebDriverWait(driver,3,0.5).until(    #设置显示等待时间，每0.5秒检查一次，如果超出指定值就报错
+            EC.presence_of_element_located((By.XPATH, loc[name].UIIdentifier)))
             log.info(u'定位元素:{0}'.format(name))
             # log.info(loc[name].value)
         except BaseException:
@@ -86,7 +86,7 @@ class test(object):
         self.find(name).clear()  
         log.info(u'清空文本框{0}'.find(name)) 
 
-    def get_name():
+    def get_name(self):
         name=driver.name
         log.info(u'浏览器名称： {0}'.find(name))
 
@@ -98,5 +98,5 @@ if __name__ == "__main__":
     time.sleep(3)
     t.click(u'百度翻译')
     t.get_url()
-    t.quit()
+    # t.quit()
       
