@@ -5,16 +5,20 @@ import BasePage
 class MyTest(unittest.TestCase):#继承unittest.TestCase
     def tearDown(self):
         #每个测试用例执行之后做操作
-        print('')
+        self.assertIs(1,1)
     def setUp(self):
         #每个测试用例执行之前做操作
-        print(22222)
+        self.assertIs(1,1)
     def test_run(self):
         # self.assertEqual(1,1)
         self.assertIs(1,1)
         #测试用例
     def test_run2(self):
         # self.assertEqual(1,1)
+        t = BasePage.BasePage("Google",'locators')
+        t.open("https://www.baidu.com")
+        t.Screenshot()
+        t.quit()
         self.assertIs(1,1)
         #测试用例
     def test_run3(self):
@@ -22,13 +26,11 @@ class MyTest(unittest.TestCase):#继承unittest.TestCase
         self.assertIs(1,1)
         #测试用例
     def test_run1(self):
-        t = BasePage.BasePage("Google",'locators')
+        t = BasePage.BasePage("firefox",'locators')
         t.open("https://www.baidu.com")
-        # t.send_keys(u"搜索","test")
-        # t.click(u'百度一下')
         t.Screenshot()
         t.quit()
-        self.assertIs(1,1)
+        self.assertIs(1,2)
         #测试用例
 if __name__ == '__main__':
     test_suite = unittest.TestSuite()#创建一个测试集合

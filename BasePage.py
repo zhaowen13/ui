@@ -114,7 +114,7 @@ class BasePage(object):
         return title
 
     def Screenshot(self):
-         isExists=os.path.exists("./images\\")
+        isExists=os.path.exists("./images\\")
         # 判断结果
         if not isExists:
         # 如果不存在则创建目录
@@ -125,7 +125,6 @@ class BasePage(object):
         imgPath = os.path.join('./images\\', '%s.png' % str(timestrmap))
         driver.save_screenshot(imgPath)
         log.info('screenshot:'+timestrmap+'.png')
-        print  'screenshot:', timestrmap, '.png'
    
 
 if __name__ == "__main__":

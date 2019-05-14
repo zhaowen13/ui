@@ -2,7 +2,7 @@
 import logging
 import os
 import ctypes
-
+import time
 
 class mylogs:
 
@@ -34,16 +34,19 @@ class mylogs:
     print(message)
 
   def info(self,message):
+    time1 = time.strftime('%Y-%m-%d %H:%M:%S')
     self.logger.info(message)
-    print(message)
+    # print("<pre style=\"color:Green:scroll; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;\">测试一下</pre>")
+    print(time1+'[info]'+message)
 
   def war(self,message):
     self.logger.warn(message)
     print(message)
 
   def error(self,message):
-   self.logger.error(message)
-   print(message)
+    time1 = time.strftime('%Y-%m-%d %H:%M:%S')
+    self.logger.error(message)
+    print(time1+'[error]'+message)
 
   def cri(self,message):
     self.logger.critical(message)
