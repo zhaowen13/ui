@@ -117,19 +117,19 @@ function html_escape(s) {
 <div class='heading'>
 <h4 style="font-family: Microsoft YaHei">UI测试报告</h4>
 <p class='attribute'><strong>测试人员 : </strong> zhaowen</p>
-<p class='attribute'><strong>开始时间 : </strong> 2019-05-14 17:39:30</p>
-<p class='attribute'><strong>合计耗时 : </strong> 0:00:10.351000</p>
-<p class='attribute'><strong>测试结果 : </strong> 共 1，失败 1，通过率= 0.00%</p>
+<p class='attribute'><strong>开始时间 : </strong> 2019-05-16 16:39:45</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:10.986000</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 1，通过 1，通过率= 100.00%</p>
 
 <p class='description'>测试情况</p>
 </div>
 
 
 <p id='show_detail_line'>
-<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 0.00% }</a>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 100.00% }</a>
 <a class="btn btn-warning" href='javascript:showCase(4)'>错误{ 0 }</a>
-<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 1 }</a>
-<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 0 }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 1 }</a>
 <a class="btn btn-info" href='javascript:showCase(3)'>所有{ 1 }</a>
 </p>
 <table id='result_table' class="table table-condensed table-bordered table-hover">
@@ -152,44 +152,42 @@ function html_escape(s) {
     <td>截图</td>
 </tr>
 
-<tr class='failClass warning'>
+<tr class='passClass warning'>
     <td>MyTest</td>
     <td class="text-center">1</td>
-    <td class="text-center">0</td>
     <td class="text-center">1</td>
+    <td class="text-center">0</td>
     <td class="text-center">0</td>
     <td class="text-center"><a href="javascript:showClassDetail('c1',1)" class="detail" id='c1'>详细</a></td>
     <td class="text-center">Assert or Error Image</td>
 </tr>
 
-<tr id='ft1_1' class='none'>
-    <td class='failCase' width='300px'><div class='testcase'>test_run1</div></td>
+<tr id='pt1_1' class='hiddenRow'>
+    <td class='passCase' width='300px'><div class='testcase'>test_run1</div></td>
     <td colspan='5' align='left' width='600px'> <!--print 输出框位置-->
     <!--默认收起错误信息 -Findyou
-    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_1'>失败</button>
-    <div id='div_ft1_1' class="collapse">  -->
     <!-- 默认展开错误信息 -Findyou -->
-    <button id='btn_ft1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_1'>失败</button>
-    <div id='div_ft1_1' class="collapse in">
-    <pre style="color:Green; font-family:隶书; overflow-x:hidden;height:200px; width:600px; margin:auto; border:1px solid #e1e1e1;">
-    
-2019-05-14 17:39:35[info]打开火狐浏览器
-2019-05-14 17:39:35[info]最大化
-2019-05-14 17:39:36[info]打开:https://www.baidu.com
-2019-05-14 17:39:37[info]screenshot:20190514_17.39.36.png
-2019-05-14 17:39:37[info]3秒后关闭浏览器
-Traceback (most recent call last):
-  File ".\Mytest.py", line 33, in test_run1
-    self.assertIs(1,2)
-AssertionError: 1 is not 2
-
-
-    </pre>
+    <button id='btn_pt1_1' type="button"  class="btn btn-success btn-xs" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+    <div id='div_pt1_1' class="collapse">
+   
+    <span style="color:#16A05D"><b>
+[2019-05-16 16:39:47][INFO]打开谷歌浏览器</b></span><br /><span style="color:#16A05D"><b>
+[2019-05-16 16:39:48][INFO]最大化</b></span><br /><span style="color:#16A05D"><b>
+[2019-05-16 16:39:49][INFO]打开:https://www.baidu.com</b></span><br /><span style="color:#16A05D"><b>
+[2019-05-16 16:39:49][INFO]定位元素:搜索</b></span><br /><span style="color:#16A05D"><b>
+[2019-05-16 16:39:49][INFO]在:搜索输入test</b></span><br /><span style="color:#16A05D"><b>
+[2019-05-16 16:39:52][INFO]定位元素:百度一下</b></span><br /><span style="color:#16A05D"><b>
+[2019-05-16 16:39:52][INFO]点击百度一下</b></span><br /><span style="color:#16A05D"><b>
+[2019-05-16 16:39:52][INFO]暂停3秒</b></span><br /><span style="color:#16A05D"><b>
+[2019-05-16 16:39:55][INFO]定位元素:百度翻译</b></span><br /><span style="color:#16A05D"><b>
+[2019-05-16 16:39:56][INFO]点击百度翻译</b></span><br /><span style="color:#16A05D"><b>
+[2019-05-16 16:39:56][INFO]切换页面</b></span><br />
+   
     </div>
     </td>
     <td align="right">
-        <a  href="./images/20190514_17.39.36.png">
-            <img   src="./images/20190514_17.39.36.png" height="200px" width="400px"/>
+        <a hidden="hidden" href="">
+            <img   src="" height="200px" width="400px"/>
         </a>
     </td>
 </tr>
@@ -199,10 +197,10 @@ AssertionError: 1 is not 2
 <tr id='total_row' class="text-center active">
     <td>总计</td>
     <td>1</td>
-    <td>0</td>
     <td>1</td>
     <td>0</td>
-    <td>通过率：0.00%</td>
+    <td>0</td>
+    <td>通过率：100.00%</td>
     <td> <a href="" target="_blank"></a></td>
 </tr>
 </table>
