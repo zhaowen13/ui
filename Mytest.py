@@ -2,7 +2,7 @@
 import HTMLTestRunner        
 import unittest
 from BasePage import BasePage
-from utls.mylogs import mylogs
+from utils.mylogs import mylogs
 from action import action
 
 class MyTest(unittest.TestCase):#继承unittest.TestCase

@@ -1,8 +1,8 @@
 #coding=utf-8
 import urllib2,sys
 from BasePage import BasePage
-from utls.cassjson import cassjson
-from utls.mylogs import mylogs
+from utils.cassjson import cassjson
+from utils.mylogs import mylogs
 
 class action(object):
     
