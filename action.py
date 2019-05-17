@@ -43,7 +43,7 @@ class action(object):
                     driver.refresh()
                 elif i.type==u'页面标题':
                     driver.title()
-                elif i.namme==u'上下滑动':
+                elif i.type==u'上下滑动':
                     driver.Slide(i.name)
 if __name__ == "__main__":
     mylogs.log()
