@@ -3,6 +3,7 @@ import urllib2,sys
 from BasePage import BasePage
 from utils.cassjson import cassjson
 from utils.mylogs import mylogs
+from utils.Context import context
 
 class action(object):
     
@@ -45,6 +46,11 @@ class action(object):
                     driver.title()
                 elif i.type==u'上下滑动':
                     driver.Slide(i.name)
+                elif i.type==u'断言':
+                    context.set("driver",driver)
+                    context.set("name",name)
+                    context.set("member",i.name)
+                    context.set("container",i.text)
 if __name__ == "__main__":
     mylogs.log()
     a=action()
