@@ -748,7 +748,7 @@ class HTMLTestRunner(Template_mixin):
             # Class = (n == 0 and 'hiddenRow' or 'none'),
             Class = 'hiddenRow',   
             style = n == 2 and 'errorCase' or (n == 1 and 'failCase' or 'passCase'),
-            style2 = n == 2 and 'errorCase' or (n == 1 and 'btn btn-danger btn-xs' or 'btn btn-success btn-xs'),
+            style2 = n == 2 and 'errorCase' and 'btn btn-warning btn-xs' or (n == 1 and 'btn btn-danger btn-xs' or 'btn btn-success btn-xs'),
             style3 = n == 2 and 'errorCase' or (n == 1 and 'in' or 'collapse'),
             desc = desc,
             script = script.replace(tid+': ',''),
