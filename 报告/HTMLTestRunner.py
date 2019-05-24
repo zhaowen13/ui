@@ -722,6 +722,7 @@ class HTMLTestRunner(Template_mixin):
             id = tid,
             output = saxutils.escape(uo+ue),
             
+            
         )
         # 插入图片
         unum = str(uo).rfind(u'截图:')
@@ -735,7 +736,7 @@ class HTMLTestRunner(Template_mixin):
         else:
             hidde_status = '''hidden="hidden"'''
             image_url = ''
-        s=script.split('  ')
+        s=script.split('\n')
         script=''
         for script2 in s:
             if('INFO' in script2):
