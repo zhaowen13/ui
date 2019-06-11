@@ -7,7 +7,7 @@ from Locator import locator
 class AnalyzeJson(object):   
 
     def Analyze(self,name):
-        f = open("./loc\\{0}.json".format(name))  
+        f = open("../loc\\"+name+".json")  
         setting = json.load(f)
         table = {}         
         map=dict([(v,k) for k, v in table.iteritems()])    
