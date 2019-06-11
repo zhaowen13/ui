@@ -1,0 +1,243 @@
+[
+    {
+        "name": "登录",
+        "UIIdentifier": "//text()[contains(.,'登录')]/ancestor::button[1]",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "密码",
+        "UIIdentifier": "//input[@type='password'][@name='password']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "用户名",
+        "UIIdentifier": "//*[@name='username']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "不再提示",
+        "UIIdentifier": "//div[contains(text(),'不再提示')]",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "互动",
+        "UIIdentifier": "//*[@class='iconfont icon-ef--hudong']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "博主圈",
+        "UIIdentifier": "//*[@class='iconfont icon-ef--bozhuquan']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "博主",
+        "UIIdentifier": "//*[@class='iconfont icon-ef--bozhu']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "事件",
+        "UIIdentifier": "//*[@class='iconfont icon-ef--shijian']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "全球",
+        "UIIdentifier": "//*[@id='app']/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/div/input",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "范围",
+        "UIIdentifier": "//*[@id='app']/div[3]/div[1]/div/div[2]/div[2]/div/div[2]/ul/li",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "搜索",
+        "UIIdentifier": "//*[@id='app']/div[3]/div[1]/div/div[1]/div[1]/textarea",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "高级",
+        "UIIdentifier": "//a[@class='advanced-btn']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "监测事件",
+        "UIIdentifier": "//*[@id='ui-id-1']/li",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "删除",
+        "UIIdentifier": "//button[@class='ef-button ef-text-overflow ef-button-confirm ef-button-small']//span[contains(text(),'删除')]",
+        "type": "Xpath",
+        "matchingNodes": "2"
+    },
+    {
+        "name": "全选",
+        "UIIdentifier": "//input[@type='checkbox'][@class='select-all-checkbox']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "多选",
+        "UIIdentifier": "//span[contains(text(),'多选')]",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "找回",
+        "UIIdentifier": "//span[@class='open-find-back-btn']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "是否有事件",
+        "UIIdentifier": "//*[@id='app']/div[5]/div/div[1]/div/div[1]/div/div[2]/div/div[1]/div/div[2]/div/div[1]/div",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "是否有博主",
+        "UIIdentifier": "//div[@class='attention-item-title']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "设置",
+        "UIIdentifier": "//a[@class='sidebar-footer-user icon']//div[@class='ef-badge']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "帐号名",
+        "UIIdentifier": "//div[@class='user-account-setting']//div[2]//div[1]//div[2]//div[1]",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "手机号码",
+        "UIIdentifier": "//input[@type='text'][@placeholder='手机号码']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "邮箱地址",
+        "UIIdentifier": "//input[@type='text'][@placeholder='邮箱地址']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "保存",
+        "UIIdentifier": "//text()[contains(.,'保存')]/ancestor::button[1]",
+        "type": "Xpath",
+        "matchingNodes": "3"
+    },
+    {
+        "name": "昵称",
+        "UIIdentifier": "//input[@type='text'][@placeholder='显示昵称']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "修改手机号",
+        "UIIdentifier": "//div[@class='user-account-setting']//div[4]//div[1]//div[3]//div[1]//div[1]//a[1]",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "修改邮箱",
+        "UIIdentifier": "//div[@class='user-account-setting']//div[3]//div[1]//div[3]//div[1]//div[1]//a[1]",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "修改昵称",
+        "UIIdentifier": "//div[@class='user-account-setting']//div[2]//div[1]//div[3]//div[1]//div[1]//a[1]",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "帐号设置",
+        "UIIdentifier": "//a[contains(text(),'账号设置')]",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "偏好设置",
+        "UIIdentifier": "//a[contains(text(),'偏好设置')]",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "修改地域",
+        "UIIdentifier": "//*[@id='app']/div[6]/div[1]/div/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div[1]/div/div[3]/div/div/a",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "修改行业",
+        "UIIdentifier": "//*[@id='app']/div[6]/div[1]/div/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div[2]/div/div[3]/div/div/a",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "选择地域",
+        "UIIdentifier": "//input[@placeholder='请选择地域，不选则不限地域']",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "区域",
+        "UIIdentifier": "//*[@id='app']/div[6]/div[1]/div/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div/div/div/div/div[2]/ul/div/div[2]/div[1]/div/div",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "选择市",
+        "UIIdentifier": "//*[@id='app']/div[6]/div[1]/div/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div/div/div/div/div[2]/ul/div/div[2]/div[2]/div/div/div",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "选择县",
+        "UIIdentifier": "//*[@id='app']/div[6]/div[1]/div/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div/div/div/div/div[2]/ul/div/div[2]/div[3]/div/div/div",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "更多",
+        "UIIdentifier": "//a[contains(text(),'更多')]",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "选择行业",
+        "UIIdentifier": "//*[@id='app']/div[6]/div[1]/div/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div[2]/div[2]/div/div/div/div/div[1]/div",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "所属地域",
+        "UIIdentifier": "//*[@id='app']/div[6]/div[1]/div/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div[1]/div/div[2]/div",
+        "type": "Xpath",
+        "matchingNodes": "1"
+    },
+    {
+        "name": "所属行业",
+        "UIIdentifier": "//*[@id='app']/div[6]/div[1]/div/div[2]/div/div[2]/div[2]/div/div[2]/div[1]/div[2]/div/div[2]/div",
+        "type": "Xpath",
+        "matchingNodes": "1"
+        
+    }
+]
