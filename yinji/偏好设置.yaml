@@ -1,0 +1,47 @@
+-
+  type: 点击
+  name: 设置    
+-    
+  type: 点击
+  name: 偏好设置
+-
+  type: 点击
+  name: 修改地域
+-
+  type: 点击
+  name: 选择地域
+-
+  type: 随机选择列表中的值点击2
+  name: 区域
+  text: /div
+-
+  type: 随机选择列表中的值点击
+  name: 选择市
+-
+  type: 随机选择列表中的值点击
+  name: 选择县
+-
+  type: 点击
+  name: 保存
+-
+  type: 点击
+  name: 修改行业
+-
+  type: 点击
+  name: 更多
+-
+  type: 随机选择列表中的值点击
+  name: 选择行业
+-
+  type: 点击
+  name: 保存
+-
+  type: 暂停
+  name: 3
+-
+  type: 文本框的值
+  name: 所属行业
+-
+  type: 断言
+  name: 所属行业
+  text: 选择行业
