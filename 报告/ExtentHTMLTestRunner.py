@@ -849,8 +849,8 @@ class Template_mixin(object):
 </tr>
 """ # variables: (tid, Class, style, desc, status)
     REPORT_IMAGE = r"""
-    <a  href="./images/%(screenshot)s">
-    <img class="small_img" src="./images/%(screenshot)s"  onclick="document.getElementById('light_%(screenshot_id)s').style.display ='block';document.getElementById('fade_%(screenshot_id)s').style.display='block'"/>
+    <a  href="../images/%(screenshot)s">
+    <img class="small_img" src="../images/%(screenshot)s"  onclick="document.getElementById('light_%(screenshot_id)s').style.display ='block';document.getElementById('fade_%(screenshot_id)s').style.display='block'"/>
     </a>
     """
 
@@ -1248,7 +1248,7 @@ class HTMLTestRunner(Template_mixin):
         doc = t.shortDescription() or ""
         desc = doc and ('%s: %s' % (name, doc)) or name
         tmpl = has_output and self.TBODY or self.REPORT_TEST_NO_OUTPUT_TMPL
-
+        ss =''
         # o and e should be byte string because they are collected from stdout and stderr?
         if isinstance(o,str):
             # TODO: some problem with 'string_escape': it escape \n and mess up formating
