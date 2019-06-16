@@ -22,7 +22,7 @@ class BasePage(object):
         self.u=user()
 
 
-    def open(self,browser,host='http://localhost:5555/wd/hub'):   # 初始化 打开浏览器 并最大化  self 与java中的this中一样，调用时不用传入self参数 
+    def open(self,browser,host='http://localhost:8081/wd/hub'):   # 初始化 打开浏览器 并最大化  self 与java中的this中一样，调用时不用传入self参数 
         try:
             self.driver = Remote(command_executor = host,
                             desired_capabilities = {'platform': 'ANY',
