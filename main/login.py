@@ -10,7 +10,7 @@ from utils.mylogs import mylogs
 from utils.user import user
 
 
-class login2(MyTest):#继承unittest.TestCase
+class login2(MyTest):#继承unittest.TestCase 
     u''':登录'''
     def test_run(self):
         u''':谷歌登录'''
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     test_suite.addTest(unittest.makeSuite(login2))#使用makeSuite方法添加所有的测试方法
     fp = open('../res.html','wb')#打开一个保存结果的html文件
     runner = HTMLTestRunner(stream=fp,title=u'UI测试报告',description=u'测试情况')
-    runner.run(test_suite)
+    runner.run(test_suite) #运行测试
     pass
     
    
