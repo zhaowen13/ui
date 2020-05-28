@@ -5,7 +5,7 @@ from BasePage import BasePage
 sys.path.append('..')
 from utils.caseyaml import caseyaml
 from utils.Context import context
-from utils.mylogs import mylogs
+from utils.custom_logger import logger_cls
 from utils.Random import Random
 from utils.user import user
 
@@ -79,7 +79,7 @@ class action(object):
             elif i.type == u'上下滑动':
                 self.driver.Slide(i.name)
             elif i.type == u'断言':
-                mylogs.info(u'要开始断言了')
+                logger_cls.info(u'要开始断言了')
                 context.set("driver", self.driver)
                 context.set("name", name)           #用例名称
                 context.set("member", context.get(i.name))
@@ -97,7 +97,7 @@ if __name__ == "__main__":
             passwords.append(password)  
     context.set('username',usernames[0])
     context.set('password',passwords[0]) 
-    mylogs.log()
+    logger_cls.log()
     a = action()
     a.go('login')
     a.go(u'偏好设置')

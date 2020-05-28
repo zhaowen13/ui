@@ -6,7 +6,7 @@ import time
 from ExtentHTMLTestRunner  import HTMLTestRunner    
 import unittest,sys,os
 sys.path.append('..')
-from utils.mylogs import mylogs
+from utils.custom_logger import logger_cls
 from utils.user import user
 from utils.Context import context
  
@@ -35,7 +35,7 @@ class myThread (threading.Thread):   #继承父类threading.Thread
         
 
 if __name__ == "__main__":
-    mylogs.log()
+    logger_cls.log()
     u=user()
     users=u.getuser(sys.argv[2])
     usernames=[]

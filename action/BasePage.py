@@ -9,7 +9,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time,os,random,sys
 sys.path.append('..')
 from utils.AnalyzeJson import AnalyzeJson
-from utils.mylogs import mylogs
+from utils.custom_logger import logger_cls
 from utils.user import user
 
 
@@ -35,8 +35,8 @@ class BasePage(object):
         except Exception as e:
             print(e)
         
-        mylogs.info(u"打开{0}浏览器".format(browser))              
-        mylogs.info(u"最大化")  
+        logger_cls.info(u"打开{0}浏览器".format(browser))              
+        logger_cls.info(u"最大化")  
         
 
     def get(self,name):
@@ -45,46 +45,46 @@ class BasePage(object):
         try:  
             self.driver.get(url)
             self.driver.implicitly_wait(10) # 隐性等待，最长等10秒    
-            mylogs.info(u'打开:{0}'.format(url))  
+            logger_cls.info(u'打开:{0}'.format(url))  
             self.myurl=url
         except BaseException:
-            mylogs.error(u'打开{0}失败'.format(url)) 
+            logger_cls.error(u'打开{0}失败'.format(url)) 
         self.loc=AnalyzeJson().Analyze(name)    #初始化，读取xml 赋值给loc
             
     def find(self,name):                 #元素定位，并返回定位好的元素
         try:
             el = WebDriverWait(self.driver,3,0.5).until(    #设置显示等待时间，每0.5秒检查一次，如果超出指定值就报错
             EC.presence_of_element_located((self.loc[name].type, self.loc[name].UIIdentifier)))
-            mylogs.info(u'定位元素:{0}'.format(name))
-            # mylogs.info(loc[name].value)
+            logger_cls.info(u'定位元素:{0}'.format(name))
+            # logger_cls.info(loc[name].value)
         except BaseException:
-            mylogs.error(u'定位元素:{0}失败'.format(name)) 
+            logger_cls.error(u'定位元素:{0}失败'.format(name)) 
         return el
 
     def send_keys(self,name, text):
         try:
             self.find(name).send_keys(text) 
-            mylogs.info(u'在:{0}输入{1}'.format(name,text))
+            logger_cls.info(u'在:{0}输入{1}'.format(name,text))
             time.sleep(3)
         except BaseException:
-            mylogs.error(u'在：{0}输入{1}失败'.format(name,text))
+            logger_cls.error(u'在：{0}输入{1}失败'.format(name,text))
 
     def click(self,name):
         try: 
             self.find(name).click()
-            mylogs.info(u'点击:{0}'.format(name))
+            logger_cls.info(u'点击:{0}'.format(name))
             time.sleep(3)
         except BaseException:
-            mylogs.error(u'点击:{0}失败'.format(name))
+            logger_cls.error(u'点击:{0}失败'.format(name))
     
     def being(self,name):
         t=False
         try:
             self.driver.find_element_by_xpath(self.loc[name].UIIdentifier)
             t=True
-            mylogs.info(u'{0}元素存在'.format(name))
+            logger_cls.info(u'{0}元素存在'.format(name))
         except BaseException:
-            mylogs.info(u'{0}元素不存在'.format(name))
+            logger_cls.info(u'{0}元素不存在'.format(name))
         return t
 
     def login(self,username,password):
@@ -94,9 +94,9 @@ class BasePage(object):
         self.click(u'登录')
         time.sleep(3)
         if  self.get_url()!=self.myurl:
-            mylogs.info(u"登录成功")
+            logger_cls.info(u"登录成功")
         else:
-            mylogs.error(u"登录失败")
+            logger_cls.error(u"登录失败")
         if self.being(u'不再提示'):
             self.click(u'不再提示')
         self.get_version()
@@ -122,93 +122,93 @@ class BasePage(object):
     def randomclick(self,name,div=None):
         text=''
         i=len(self.driver.find_elements_by_xpath(self.loc[name].UIIdentifier))
-        mylogs.info(u'{0}列表中有{1}个参数'.format(name,i))
+        logger_cls.info(u'{0}列表中有{1}个参数'.format(name,i))
         y=random.randint(1, i)
         if div==None:
             path=self.loc[name].UIIdentifier+'['+str(y)+']'
             text=self.driver.find_element_by_xpath(path).text
             self.driver.find_element_by_xpath(path).click()
-            mylogs.info(u'随机选择列表中的{0}第个参数并点击'.format(y))
+            logger_cls.info(u'随机选择列表中的{0}第个参数并点击'.format(y))
         else:
             i2=len(self.driver.find_elements_by_xpath(self.loc[name].UIIdentifier+'['+str(y)+']'))
             y2=random.randint(1, i2)
             path=self.loc[name].UIIdentifier+'['+str(y2)+']'+div
             text=self.driver.find_element_by_xpath(path).text
             self.driver.find_element_by_xpath(path).click()
-            mylogs.info(u'随机选择列表中的{0}第个参数并点击'.format(y2))  
+            logger_cls.info(u'随机选择列表中的{0}第个参数并点击'.format(y2))  
       
-        mylogs.info(u'{0}:文本的值为:{1}'.format(name,text))
+        logger_cls.info(u'{0}:文本的值为:{1}'.format(name,text))
         time.sleep(3)
         return text
         
     
 
     def close(self):
-        mylogs.info(u'3秒后关闭当前页面')
+        logger_cls.info(u'3秒后关闭当前页面')
         time.sleep(3)
         self.driver.close()
 
     def quit(self):
-        mylogs.info(u'3秒后关闭浏览器')
+        logger_cls.info(u'3秒后关闭浏览器')
         time.sleep(3)
         self.driver.quit()
 
     def get_url(self):
         url=self.driver.current_url  
-        mylogs.info(u'当前页面url:'+url)    
+        logger_cls.info(u'当前页面url:'+url)    
         return url
 
     def get_text(self,name):
         text=self.find(name).text
-        mylogs.info(u'{0}文本框的值为:{1}'.format(name,text))
+        logger_cls.info(u'{0}文本框的值为:{1}'.format(name,text))
         return text
 
     def back(self):   
         self.driver.back()
-        mylogs.info(u'返回上一页面')
+        logger_cls.info(u'返回上一页面')
 
     def clear(self,name):
         self.find(name).clear()  
-        mylogs.info(u'清空文本框:{0}'.format(name)) 
+        logger_cls.info(u'清空文本框:{0}'.format(name)) 
 
     def get_name(self):
         name=self.driver.name
-        mylogs.info(u'浏览器名称：{0}'.format(name))
+        logger_cls.info(u'浏览器名称：{0}'.format(name))
 
     def get_driver(self):
         return self.driver
 
     def get_version(self):
         version=self.driver.capabilities['version'] 
-        mylogs.info(u'浏览器版本：{0}'.format(version))
+        logger_cls.info(u'浏览器版本：{0}'.format(version))
         return version
 
     def switch_to(self):
         self.driver.switch_to.window(self.driver.window_handles[-1])
-        mylogs.info(u'切换页面')
+        logger_cls.info(u'切换页面')
 
 
     def focus(self,name):
         ele = self.find(name)
         ActionChains(self.driver).move_to_element(ele).perform()
-        mylogs.info(u'鼠标悬停到元素:{0}'.format(name))
+        logger_cls.info(u'鼠标悬停到元素:{0}'.format(name))
 
     def refresh(self):
         self.driver.refresh()
-        mylogs.info(u'刷新页面')
+        logger_cls.info(u'刷新页面')
 
     def title(self):
         title=self.driver.title
-        mylogs.info(u'当前页面标题'+title)    
+        logger_cls.info(u'当前页面标题'+title)    
         return title
     
     def Slide(self,height):
         js="var q=document.documentElement.scrollTop={0}".format(str(height))
         self.driver.execute_script(js)
-        mylogs.info(u'上下滑动'+str(height))
+        logger_cls.info(u'上下滑动'+str(height))
 
     def sleep(self,i):
-        mylogs.info(u'暂停{0}秒'.format(i))
+        logger_cls.info(u'暂停{0}秒'.format(i))
         time.sleep(int(i))
 
     def Screenshot(self,name):
@@ -223,7 +223,7 @@ class BasePage(object):
         timestrmap = time.strftime('%Y%m%d_%H%M%S')
         imgPath = os.path.join('../images\\', str(timestrmap)+name+'.png')
         self.driver.save_screenshot(imgPath)
-        mylogs.info(u'截图:{0}{1}.png'.format(str(timestrmap),name))
+        logger_cls.info(u'截图:{0}{1}.png'.format(str(timestrmap),name))
        
    
 

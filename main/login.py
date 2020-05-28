@@ -6,7 +6,7 @@ sys.path.append('..')
 from utils.Mytest import MyTest
 from action.action import action
 from utils.Context import context
-from utils.mylogs import mylogs
+from utils.custom_logger import logger_cls
 from utils.user import user
 
 
@@ -40,7 +40,7 @@ if __name__ == "__main__":
             passwords.append(password)  
     context.set('username',usernames[0])
     context.set('password',passwords[0]) 
-    mylogs.log()
+    logger_cls.log()
     test_suite = unittest.TestSuite()#创建一个测试集合
     test_suite.addTest(unittest.makeSuite(login2))#使用makeSuite方法添加所有的测试方法
     fp = open('../res.html','wb')#打开一个保存结果的html文件
