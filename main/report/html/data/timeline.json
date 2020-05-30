@@ -1,0 +1,25 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "LAPTOP-1DMUQ9HH",
+    "children" : [ {
+      "name" : "12356-MainThread",
+      "children" : [ {
+        "name" : "test_1",
+        "uid" : "7ad40b218b2fc0db",
+        "parentUid" : "8c008ca725e3f53c0b9186bd481fdea7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1590740357225,
+          "stop" : 1590740537946,
+          "duration" : 180721
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "8c008ca725e3f53c0b9186bd481fdea7"
+    } ],
+    "uid" : "c9dad73809632ea2981bd458823ebd93"
+  } ]
+}

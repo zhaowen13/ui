@@ -1,0 +1,11 @@
+[32mINFO    [0m my_logger:BasePage.py:46 打开chrome浏览器
+[32mINFO    [0m my_logger:BasePage.py:47 最大化
+[32mINFO    [0m my_logger:BasePage.py:54 打开:https://www.eagtek.com
+[32mINFO    [0m my_logger:BasePage.py:63 定位元素:用户名
+[32mINFO    [0m my_logger:BasePage.py:72 在:用户名输入systemtest07
+[32mINFO    [0m my_logger:BasePage.py:63 定位元素:密码
+[32mINFO    [0m my_logger:BasePage.py:72 在:密码输入g7SdT*
+[32mINFO    [0m my_logger:BasePage.py:63 定位元素:登录
+[32mINFO    [0m my_logger:BasePage.py:80 点击:登录
+[32mINFO    [0m my_logger:BasePage.py:92 不再提示元素不存在
+[32mINFO    [0m my_logger:BasePage.py:153 3秒后关闭浏览器

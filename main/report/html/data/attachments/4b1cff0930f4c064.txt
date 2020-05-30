@@ -1,0 +1,11 @@
+2020-05-29 16:19:26,779 - [BasePage.py --> line:46] - INFO : 打开chrome浏览器
+2020-05-29 16:19:26,779 - [BasePage.py --> line:47] - INFO : 最大化
+2020-05-29 16:21:39,051 - [BasePage.py --> line:54] - INFO : 打开:https://www.eagtek.com
+2020-05-29 16:21:39,068 - [BasePage.py --> line:63] - INFO : 定位元素:用户名
+2020-05-29 16:21:39,147 - [BasePage.py --> line:72] - INFO : 在:用户名输入systemtest07
+2020-05-29 16:21:42,191 - [BasePage.py --> line:63] - INFO : 定位元素:密码
+2020-05-29 16:21:42,282 - [BasePage.py --> line:72] - INFO : 在:密码输入g7SdT*
+2020-05-29 16:21:45,325 - [BasePage.py --> line:63] - INFO : 定位元素:登录
+2020-05-29 16:21:45,388 - [BasePage.py --> line:80] - INFO : 点击:登录
+2020-05-29 16:22:08,841 - [BasePage.py --> line:92] - INFO : 不再提示元素不存在
+2020-05-29 16:22:14,842 - [BasePage.py --> line:153] - INFO : 3秒后关闭浏览器

@@ -1,0 +1,82 @@
+{
+  "uid" : "7ad40b218b2fc0db",
+  "name" : "test_1",
+  "fullName" : "test_01#test_1",
+  "historyId" : "104ef9e932951adf4b1f777a71296836",
+  "time" : {
+    "start" : 1590740357225,
+    "stop" : 1590740537946,
+    "duration" : 180721
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "56528e4090b0ffb0",
+      "name" : "log",
+      "source" : "56528e4090b0ffb0.txt",
+      "type" : "text/plain",
+      "size" : 718
+    }, {
+      "uid" : "4b1cff0930f4c064",
+      "name" : "stderr",
+      "source" : "4b1cff0930f4c064.txt",
+      "type" : "text/plain",
+      "size" : 917
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "login"
+  }, {
+    "name" : "suite",
+    "value" : "test_01"
+  }, {
+    "name" : "host",
+    "value" : "LAPTOP-1DMUQ9HH"
+  }, {
+    "name" : "thread",
+    "value" : "12356-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython2"
+  }, {
+    "name" : "package",
+    "value" : "test_01"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "5a8ba18e795c5810",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590739284356,
+        "stop" : 1590739328798,
+        "duration" : 44442
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7ad40b218b2fc0db.json",
+  "parameterValues" : [ ]
+}

@@ -1,6 +1,6 @@
 #coding=utf-8
 import urllib2
-import json
+import json,sys
 from Locator import locator
 
 
@@ -18,6 +18,9 @@ class AnalyzeJson(object):
             l = locator(name,type,UIIdentifier)
             map[name]=l    
         return map
+
+loc=AnalyzeJson()
+
 if __name__ == '__main__':
     a=AnalyzeJson()
     a.Analyze('')

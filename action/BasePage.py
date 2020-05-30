@@ -7,22 +7,30 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import Remote
 from selenium.webdriver.common.action_chains import ActionChains
 import time,os,random,sys
+import yaml
 sys.path.append('..')
-from utils.AnalyzeJson import AnalyzeJson
+from utils.AnalyzeJson import loc
 from utils.custom_logger import logger_cls
 from utils.user import user
 
 
 
 class BasePage(object):
-    def __init__(self):
+    def __init__(self,project_name):
         self.driver=''
         self.loc=''
-        self.myurl=''
-        self.u=user()
+        self.project_name=project_name
+        yamlPath="user.yaml"
+        yaml.load(yamlPath, Loader=yaml.BaseLoader)
+        yaml.warnings({'YAMLLoadWarning': False})
+        f = open(yamlPath, 'r')
+        temp = yaml.load(f.read())
+        self.url=temp[project_name]['url']
+        self.username=temp[project_name]['username']
+        self.password=temp[project_name]['password']
 
 
-    def open(self,browser,host='http://localhost:8081/wd/hub'):   # 初始化 打开浏览器 并最大化  self 与java中的this中一样，调用时不用传入self参数 
+    def open(self,browser="chrome",host='http://localhost:8081/wd/hub'):   # 初始化 打开浏览器 并最大化  self 与java中的this中一样，调用时不用传入self参数 
         try:
             self.driver = Remote(command_executor = host,
                             desired_capabilities = {'platform': 'ANY',
@@ -39,17 +47,14 @@ class BasePage(object):
         logger_cls.info(u"最大化")  
         
 
-    def get(self,name):
-        urls=self.u.getuser('url')
-        url=urls[name]
+    def get(self):
         try:  
-            self.driver.get(url)
+            self.driver.get(self.url)
             self.driver.implicitly_wait(10) # 隐性等待，最长等10秒    
-            logger_cls.info(u'打开:{0}'.format(url))  
-            self.myurl=url
+            logger_cls.info(u'打开:{0}'.format(self.url))  
         except BaseException:
-            logger_cls.error(u'打开{0}失败'.format(url)) 
-        self.loc=AnalyzeJson().Analyze(name)    #初始化，读取xml 赋值给loc
+            logger_cls.error(u'打开{0}失败'.format(self.url)) 
+        self.loc=loc.Analyze(self.project_name)    #初始化，读取xml 赋值给loc
             
     def find(self,name):                 #元素定位，并返回定位好的元素
         try:
@@ -87,19 +92,15 @@ class BasePage(object):
             logger_cls.info(u'{0}元素不存在'.format(name))
         return t
 
-    def login(self,username,password):
-        self.get(sys.argv[2])
-        self.send_keys(u'用户名',username)
-        self.send_keys(u'密码',password)
+    def login(self):
+        self.get()
+        self.send_keys(u'用户名',self.username)
+        self.send_keys(u'密码',self.password)
         self.click(u'登录')
         time.sleep(3)
-        if  self.get_url()!=self.myurl:
-            logger_cls.info(u"登录成功")
-        else:
-            logger_cls.error(u"登录失败")
         if self.being(u'不再提示'):
             self.click(u'不再提示')
-        self.get_version()
+        # self.get_version()
     
     def clearmonitor(self):
         names=[u'博主',u'博主圈']
